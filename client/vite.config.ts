@@ -10,4 +10,11 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+<<<<<<< HEAD
+=======
+  server: {
+    host: "0.0.0.0", // bind to all interfaces
+    port: 5173, // optional, default is 5173
+  },
+>>>>>>> 06bec86 (dockerized)
 });

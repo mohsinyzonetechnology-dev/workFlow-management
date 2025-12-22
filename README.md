@@ -69,5 +69,14 @@ Install dependencies and start the development server:
 npm install  
 npm run dev  
 
+<<<<<<< HEAD
 
 Access the backend at http://localhost:8000.
+=======
+if docker: 
+
+docker network create workflow-network
+
+
+Access the backend at http://backend-local:8000.
+>>>>>>> 06bec86 (dockerized)

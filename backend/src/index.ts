@@ -55,9 +55,12 @@ app.get(
       "This is a bad request",
       ErrorCodeEnum.AUTH_INVALID_TOKEN
     );
+<<<<<<< HEAD
     return res.status(HTTPSTATUS.OK).json({
       message: "Hello Subscribe to the channel & share",
     });
+=======
+>>>>>>> 06bec86 (dockerized)
   })
 );
 
@@ -70,7 +73,27 @@ app.use(`${BASE_PATH}/task`, isAuthenticated, taskRoutes);
 
 app.use(errorHandler);
 
+<<<<<<< HEAD
 app.listen(config.PORT, async () => {
   console.log(`Server listening on port ${config.PORT} in ${config.NODE_ENV}`);
   await connectDatabase();
 });
+=======
+const startServer = async () => {
+  try {
+    await connectDatabase(); // wait for MongoDB connection
+    console.log("Connected to MongoDB");
+
+    const PORT = Number(config.PORT) || 8000;
+
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log(`Server listening on port ${PORT} in ${config.NODE_ENV}`);
+    });
+  } catch (err) {
+    console.error("Error connecting to MongoDB", err);
+    process.exit(1); // exit if DB connection fails
+  }
+};
+
+startServer();
+>>>>>>> 06bec86 (dockerized)
